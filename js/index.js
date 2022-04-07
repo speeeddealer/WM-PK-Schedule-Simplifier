@@ -5,6 +5,8 @@ const path = require("path");
 const { JSDOM } = require("jsdom");
 const Schedule = require("./schedule");
 
+const port = process.env.PORT || 5000;
+
 const server = http.createServer((req, res) => {
 	const search = url.parse(req.url, true);
 	const pathName = search.pathname;
@@ -103,6 +105,6 @@ const server = http.createServer((req, res) => {
 	}
 });
 
-server.listen(process.env.PORT, () => {
+server.listen(port, () => {
 	console.log("Listening for requests");
 });
