@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Nunito:wght@700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="../css/editor.css" />
+		<title>Plan lekcji do minimum</title>
+	</head>
+	<body>
+		<main class="main__container">
+			<nav class="nav__bar">
+				<a href="/home">Strona główna</a>
+				<a href="/editor">Edytor</a>
+				<a href="#">Kontakt</a>
+				<a
+					href="http://podzial.mech.pk.edu.pl/stacjonarne/html/index.html"
+					>Plan lekcji Stacjonarne PK-WM</a
+				>
+			</nav>
+			<h1 class="main__header">Witaj w edytorze</h1>
+			<form class="editor__form" action="">
+				<div class="wrapper__left">
+					<div class="input__wrapper">
+						<label for="gr_std">Grupa studencka:</label
+						><input
+							class="gr__input"
+							id="gr_std"
+							placeholder="Np. 13K2"
+							name="gr_std"
+							type="text"
+							required
+						/>
+					</div>
+					<div class="input__wrapper">
+						<label for="gr_cw">Grupa ćwiczeniowa:</label
+						><input
+							class="gr__input"
+							id="gr_cw"
+							placeholder="Np. 02"
+							name="gr_cw"
+							type="text"
+						/>
+					</div>
+					<div class="input__wrapper">
+						<label for="gr_komp">Grupa komputerowa:</label
+						><input
+							class="gr__input"
+							id="gr_komp"
+							placeholder="Np. 02"
+							name="gr_komp"
+							type="text"
+						/>
+					</div>
+					<div class="input__wrapper">
+						<label for="gr_lab">Grupa laboratoryjna:</label
+						><input
+							class="gr__input"
+							id="gr_lab"
+							placeholder="Np. 02"
+							name="gr_lab"
+							type="text"
+						/>
+					</div>
+					<div class="input__wrapper">
+						<label for="gr_proj">Grupa projektowa:</label
+						><input
+							class="gr__input"
+							id="gr_proj"
+							placeholder="Np. 02"
+							name="gr_proj"
+							type="text"
+						/>
+					</div>
+					<div class="input__wrapper">
+						<label for="gr_semi">Grupa seminaryjna:</label
+						><input
+							class="gr__input"
+							id="gr_semi"
+							placeholder="Np. 02"
+							name="gr_semi"
+							type="text"
+						/>
+					</div>
+					<div class="input__wrapper">
+						<label for="gr_wf">Grupa na WF:</label>
+						<select class="gr__input" name="gr_wf" id="gr_wf">
+							<option value="">--Płeć--</option>
+							<option value="(M) Ć">Mężczyźni</option>
+							<option value="(K) Ć">Kobiety</option>
+						</select>
+					</div>
+				</div>
+				<div class="submit__wrapper">
+					<p class="form__msg">
+						Sprawdź poprawność danych, a następnie potwierdź wybór
+						&#10003;
+					</p>
+					<input
+						class="submit__btn"
+						value="Potwierdź"
+						type="submit"
+					/>
+				</div>
+			</form>
+			<br />
+			<!--{%TABLE%}-->
+
+			<br />
+		</main>
+		<script>
+			function printPageArea(areaID) {
+				const printContent = document.getElementById(areaID);
+				const WinPrint = window.open("", "", "width=900,height=650");
+				WinPrint.document.write("<html><head><style>");
+				Object.values(document.styleSheets[1].cssRules).forEach(
+					(el) => {
+						WinPrint.document.write(el.cssText);
+					}
+				);
+				WinPrint.document.write("</style></head><body>");
+				WinPrint.document.write(printContent.innerHTML);
+				WinPrint.document.write("</body></html>");
+				WinPrint.document.close();
+				WinPrint.focus();
+				WinPrint.print();
+				WinPrint.close();
+			}
+		</script>
+	</body>
+</html>
