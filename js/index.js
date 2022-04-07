@@ -103,6 +103,6 @@ const server = http.createServer((req, res) => {
 	}
 });
 
-server.listen(1337, "127.0.0.1", () => {
+server.listen(process.env.PORT, () => {
 	console.log("Listening for requests");
 });
