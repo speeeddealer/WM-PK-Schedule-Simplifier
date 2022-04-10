@@ -10,7 +10,7 @@
 
 .home-page__background__container {
     width: 100vw;
-    height: 85vh;
+    height: 35em;
     position: relative;
 }
 .home-page__background__header {
@@ -38,7 +38,7 @@
 }
 .background__img {
     width: 100vw;
-    height: 85vh;
+    height: 100%;
     object-fit: cover;
     z-index: 1;
 }
@@ -138,4 +138,49 @@
     box-shadow: inset 0px 0px 0px 6px rgba(127, 131, 190, 1);
     background-color: transparent;
     color: rgb(127, 131, 190);
+}
+
+
+/* MEDIA SCREEN */
+
+@media screen and (max-width: 900px) {
+    /* .home-page__background__container {
+        height: 30em;
+    }
+    .instruction {
+        width: 80vw;
+    }
+    .description {
+        font-size: 1.7rem;
+    }
+    .go-to-editor__header {
+        font-size: 2.5rem;
+    } */
+    html {
+        font-size: 14px;
+    }
+    .instruction {
+        width: 80vw;
+    }
+}
+
+@media screen and (max-width: 570px) {
+    html {
+        font-size: 11px;
+    }
+    .instruction {
+        width: 85vw;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    html {
+        font-size: 7px;
+    }
+    .nav__bar {
+        padding: 0;
+    }
+    .nav__bar a {
+        font-size: 1.2em;
+    }
 }

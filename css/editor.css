@@ -42,7 +42,8 @@
 }
 
 .editor__form {
-    width: 800px;
+    width: 90vw;
+    max-width: 70em;
     display: flex;
     flex-direction: row;
     margin: 0 auto;
@@ -119,6 +120,7 @@
 }
 .schedule__wrapper {
     width: 100%;
+    overflow-x: scroll;
 }
 .schedule__header {
     width: 100%;
@@ -144,13 +146,13 @@
     background-color: rgb(195, 196, 212);
 }
 .tabela .p {
-    font-size: 1rem;
+    font-size: 1em;
 }
 .tabela .s, .tabela .n {
-    font-size: 0.9rem;
+    font-size: 0.9em;
 }
 .tabela .l {
-    min-width: 10rem;
+    min-width: 10em;
 }
 .bold {
     font-weight: bold;
@@ -167,4 +169,56 @@
 }
 #printer:hover {
     color: rgb(1, 68, 144);
+}
+
+
+@media screen and (max-width: 910px) {
+    html {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 740px) {
+    .tabela {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    html {
+        font-size: 10px;
+    }
+    .nav__bar {
+        padding: 0;
+    }
+    .nav__bar a {
+        font-size: 1.15em;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .editor__form {
+        flex-direction: column;
+    }
+    .submit__wrapper {
+        width: 100%;
+    }
+    .form__msg {
+        padding-bottom: 1em;
+    }
+    .wrapper__left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .input__wrapper {
+        width: fit-content;
+        margin: 1em;
+    }
+    html {
+        font-size: 9px;
+    }
+    .nav__bar a {
+        font-size: 1em;
+    }
 }
